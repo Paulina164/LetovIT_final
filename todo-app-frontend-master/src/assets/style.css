@@ -7,3 +7,8 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+#but:hover {
+  background-color: #4CAF50; /* Green */
+  color: white;
+}

@@ -19,12 +19,17 @@ class TodoList extends Component {
             this.props.onRemove(todoData);
           };
 
+          // const handleReverse = () => {
+          //   this.props.onReverse(todoData);
+          // }
+
           return (
             <Todo
               todo={todoData}
               key={todoData.id}
               onFinish={handleFinishTodo}
               onRemove={handleRemoveTodo}
+              // onReverse={handleReverse}
             />
           );
         })}
