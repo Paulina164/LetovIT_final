@@ -7,6 +7,8 @@ import com.accenture.letovit.todolist.ToDoItem;
  */
 public class ToDoItemValidator {
 	
+	private static final String List = null;
+
 	public static void validate(ToDoItem toDoItem) {
 		// title should not be too long
 		if (toDoItem.getTitle().length() > 30) {
@@ -16,6 +18,16 @@ public class ToDoItemValidator {
 		if (toDoItem.getText().length() > 250) {
 			throw new RuntimeException("Text is longer than 250 characters.");
 		}
+		
+		String[] profanities = { "fuck", "kurva" , "piča" , "kokot" };
+		for(int i = 0; i < profanities.length; i++) {			
+		if(toDoItem.getText().contains(profanities[i])) {
+			throw new RuntimeException("Text contains profanity.");
+		}
+		else if(toDoItem.getTitle().contains(profanities[i])) {
+			throw new RuntimeException("Text contains profanity.");
+		};
+		}
 		// validate characters in title
 		for(int i=0; i<toDoItem.getTitle().length(); i++) {
 			Character znak = toDoItem.getTitle().charAt(i);
@@ -23,5 +35,10 @@ public class ToDoItemValidator {
 				throw new RuntimeException("Invalid character '"+znak +"' in title.");
 			}
 		}
+	}
+
+	private static void elif(boolean contains) {
+		// TODO Auto-generated method stub
+		
 	}
 }
