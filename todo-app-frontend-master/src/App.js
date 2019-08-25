@@ -9,6 +9,8 @@ import AddTodo from "./views/AddTodo";
 import TodoList from "./views/TodoList";
 import Navbar from "./components/Navbar";
 
+
+
 class App extends Component {
   state = {
     todos: []
@@ -62,14 +64,20 @@ class App extends Component {
       <HashRouter>
         <div className="App">
           <Navbar />
+                  
           
           <div className="p-3">
+         
           <Switch>
+          
             <Route
               path="/"
               exact
               render={() => (
+                
+               
                 <TodoList
+                
                   todos={todos}
                   onEdit={this.editTodo}
                   onRemove={this.removeTodo}
