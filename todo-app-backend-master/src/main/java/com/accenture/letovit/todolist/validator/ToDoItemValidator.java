@@ -19,7 +19,7 @@ public class ToDoItemValidator {
 			throw new RuntimeException("Text is longer than 250 characters.");
 		}
 		
-		String[] profanities = { "fuck", "kurva" , "piča" , "kokot" };
+		String[] profanities = { "fuck", "kurva" , "piča" , "kokot", "motherfucker" };
 		for(int i = 0; i < profanities.length; i++) {			
 		if(toDoItem.getText().contains(profanities[i])) {
 			throw new RuntimeException("Text contains profanity.");
